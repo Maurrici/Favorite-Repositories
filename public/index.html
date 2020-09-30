@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Repositories</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <style>
+        @keyframes loading {
+            0%{
+                opacity: 100%;
+            }
+            100%{
+                opacity: 0%;
+            }
+        }
+
+        body{
+            background-color: rgb(41, 38, 38);
+            color: white;
+        }
+
+
+        h1{
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border: 1px solid none;
+            border-radius: 10px;
+            background-color: rgba(122, 18, 219, 0.342);
+            padding: 15px;
+            box-shadow: 10px 5px 5px black;
+            width: 350px;
+        }
+
+        section form{
+            padding: 30px;
+            width: 80vw;
+            margin: 0 auto;
+        }
+
+        form#repo-form .btn-outline-purple {
+            background-color: rgba(122, 18, 219, 0.342);
+            color: white;
+            border-color:  rgba(122, 18, 219, 0.342);
+        }
+
+        form#repo-form .btn-outline-purple:hover {
+            background-color:rgba(54, 53, 53, 0.705);
+            color:  rgba(122, 18, 219);
+            border-color:  rgba(54, 53, 53, 0.705);
+        }
+
+        section#search p#loading{
+            text-align: center;
+            margin: 0 auto;
+            animation: loading 3s infinite alternate-reverse;
+        }
+
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        li{
+            background-color: rgba(122, 18, 219, 0.342);
+            margin-left: 30px;
+            padding: 15px 15px;
+            border: 0px solid rgba(122, 18, 219, 0.342);
+            border-radius: 100px 0 0 100px;
+            clear: both;
+            margin-top: 20px;
+        }
+
+        strong{
+            font-size: 26px;
+        }
+
+        img{
+            width: 120px;
+            float: left;
+            border-radius: 100px;
+            margin-right: 20px;
+        }
+
+        li a{
+            margin-left: 60%;
+        }
+    </style>
+</head>
+<body>
+    <header class="p-3">
+        <h1>
+            Favorite Repositories <i class="fab fa-github"></i>
+        </h1>
+    </header>
+
+    <section id="search">
+        <form id="repo-form" class="form-group">
+            <div class="input-group">
+                <input type="text" name="repository" placeholder="Ex.: Maurrici/EncurtadorUrl" class="form-control">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-outline-purple d-inline">Adicionar</button>
+                </div>          
+            </div>
+        </form>
+    </section>
+    
+    <section id="info">
+        <ul id="repo-list"></ul>
+    </section>
+    
+
+    <script src="bundle.js"></script>
+</body>
+</html>
